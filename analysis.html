@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analysis · Freshman vs. Transfer Outcomes at UC Berkeley</title>
+  <meta name="description" content="A data-driven narrative comparing UC Berkeley freshman and transfer outcomes (graduation, time-to-degree, GPA, and major distribution) with interactive charts, a historical timeline, and a regional transfer map." />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true">G4</span>
+        <span class="brand-text">Freshman vs. Transfer at UC&nbsp;Berkeley<small>DIGHUM 100 · Group 4</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Introduction</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="methods.html">Methods</a></li>
+          <li><a href="data-critique.html">Data Critique</a></li>
+          <li><a href="analysis.html" aria-current="page">Analysis</a></li>
+          <li><a href="ethics.html">Ethics</a></li>
+          <li><a href="bibliography.html">Bibliography</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <span class="kicker">Analysis</span>
+    <h1>Two pathways, one degree</h1>
+    <p class="lead prose-wide">Berkeley awards both groups the same diploma. Reading the public data side by side
+      shows how differently they get there, and where the data goes quiet.</p>
+
+    <div class="draft-banner">
+      <span aria-hidden="true">⚠</span>
+      <div><strong>Draft figures.</strong> The charts below display <strong>illustrative placeholder values</strong>
+        so the visualizations render. Replace them with Group&nbsp;4’s computed numbers in
+        <code>assets/js/data.js</code>, then delete this banner before submitting.</div>
+    </div>
+
+    <!-- ============ HISTORICAL CONTEXT / TIMELINE ============ -->
+    <section id="history" class="prose-wide">
+      <h2>Where the two pathways came from</h2>
+      <p>Berkeley’s two front doors are not an accident of admissions paperwork. They come out of a deliberate
+        plan by the state. California’s 1960 Master Plan for Higher Education set up a tiered system. The
+        University of California would draw from “the top one-eighth (12.5%) of the high-school graduating class”
+        and serve as “the State’s primary academic research institution,” while the community colleges would
+        admit “any student capable of benefiting from instruction” and teach the lower division (University of
+        California, Office of the President). The transfer pathway is the hinge between those tiers, the part
+        that is supposed to make access universal. The timeline below shows how that promise has been built up,
+        expanded, and then checked by audits.</p>
+    </section>
+
+    <div class="timeline prose-wide">
+      <div class="timeline-item">
+        <span class="yr">1960</span>
+        <h3>The California Master Plan for Higher Education</h3>
+        <p>Defines the roles of the UC, CSU, and community-college systems and establishes the transfer function
+          as the route from open-access colleges into research universities like Berkeley (University of California, Office of the President).</p>
+      </div>
+      <div class="timeline-item">
+        <span class="yr">2010s</span>
+        <h3>Structured transfer and the Associate Degree for Transfer</h3>
+        <p>California expanded structured transfer through the Associate Degree for Transfer (ADT), whose
+          completion the Chancellor’s Office now tracks in DataVista. The aim was to make the community-college
+          route more predictable. <span class="muted small">[Team: confirm the exact ADT/SB&nbsp;1440 dates you want to cite.]</span></p>
+      </div>
+      <div class="timeline-item">
+        <span class="yr">2024</span>
+        <h3>An audit puts numbers to the gap</h3>
+        <p>A state audit reported that “only 1 in 5 California community college students makes it to a
+          university.” Cheap access at the front of the pipeline does not guarantee that a student reaches the
+          four-year campus (Echelman).</p>
+      </div>
+      <div class="timeline-item">
+        <span class="yr">2025</span>
+        <h3>Housing and support under scrutiny</h3>
+        <p>The California State Auditor finds that the state’s public-higher-education systems “could better
+          address student housing needs,” underscoring the material conditions that shape who finishes
+          (California State Auditor).</p>
+      </div>
+    </div>
+
+    <p class="prose-wide">With that history in view, the comparison is no longer only about individual merit. It
+      becomes a question about the system itself. Does a pathway built for access also support comparable
+      outcomes once students are in?</p>
+
+    <hr class="rule" />
+
+    <!-- ============ CHART 1: GRADUATION RATE ============ -->
+    <section id="graduation" class="prose-wide">
+      <h2>Most students finish, but not at the same rate</h2>
+      <p>Both groups mostly finish. But when we line up graduation rates by entry type, a gap opens at the
+        “on-time” checkpoint, where</p>
+    </section>
+
+    <figure class="figure float-wide" aria-label="Figure: cumulative graduation rate by entry type">
+      <div class="chart-box">
+        <p class="chart-title">Cumulative graduation rate by checkpoint</p>
+        <div style="height:340px"><canvas id="chart-gradrate" aria-label="Line chart comparing freshman and transfer cumulative graduation rates at the on-time and extended checkpoints" role="img"></canvas></div>
+        <details class="data-table">
+          <summary>View data table</summary>
+          <table class="tbl">
+            <thead><tr><th>Checkpoint</th><th>Freshman</th><th>Transfer</th></tr></thead>
+            <tbody>
+              <tr><td>“on-time” (2yr transfer / 4yr freshman)</td><td>76%</td><td>62%</td></tr>
+              <tr><td>Extended (4yr transfer / 6yr freshman)</td><td>94%</td><td>90%</td></tr>
+            </tbody>
+          </table>
+          <p class="muted small">Illustrative placeholder values. Replace them in <code>data.js</code>.</p>
+        </details>
+      </div>
+      <figcaption id="cap-grad">transfer students are more likely than freshmen to need the extra time before they
+        cross the finish line. The extended-checkpoint gap narrows, which suggests the difference is less about
+        <em>whether</em> transfers graduate than about the conditions that govern <em>when</em>.
+        <span class="src">Lines show cumulative completion by checkpoint. Source: Berkeley Data Digest, “Graduation Rates &amp; Retention” (illustrative figures).</span></figcaption>
+    </figure>
+
+    <p class="prose-wide">Finishing, but on a tighter clock, is exactly what the next measure makes visible.</p>
+
+    <!-- ============ CHART 2: TIME-TO-DEGREE ============ -->
+    <section id="time" class="prose-wide">
+      <h2>How long each group takes to finish</h2>
+      <p>Because transfers enter as juniors, comparing their raw years-to-degree against freshmen would be
+        misleading. So we read each group against its own standard clock. That comparison shows how little slack
+        the transfer timeline allows.</p>
+    </section>
+
+    <figure class="figure float-wide" aria-label="Figure: average time-to-degree against each pathway’s standard clock">
+      <div class="chart-box">
+        <p class="chart-title">Average time-to-degree vs. each pathway’s “standard” clock</p>
+        <div style="height:320px"><canvas id="chart-time" aria-label="Bar chart of average years to degree against the standard timeframe for freshman and transfer admits" role="img"></canvas></div>
+        <details class="data-table">
+          <summary>View data table</summary>
+          <table class="tbl">
+            <thead><tr><th>Group</th><th>Average years</th><th>“Standard”</th></tr></thead>
+            <tbody>
+              <tr><td>Freshman admits</td><td>4.1</td><td>4.0</td></tr>
+              <tr><td>Transfer admits</td><td>2.5</td><td>2.0</td></tr>
+            </tbody>
+          </table>
+          <p class="muted small">Illustrative placeholder values. Replace them in <code>data.js</code>.</p>
+        </details>
+      </div>
+      <figcaption id="cap-time">A freshman who needs a fifth year goes past a four-year norm by a quarter. A
+        transfer who needs one extra semester goes past a two-year norm by much more in proportion. The same
+        extra term costs a transfer more.
+        <span class="src">Source: UC InfoCenter, time-to-degree (illustrative figures).</span></figcaption>
+    </figure>
+
+    <p class="prose-wide">If transfers have less room to recover from a stumble, you might expect that pressure to
+      show up in their grades. Here, though, the data resists the easy story.</p>
+
+    <!-- ============ CHART 3: GPA ============ -->
+    <section id="gpa" class="prose-wide">
+      <h2>A small gap in graduating GPA</h2>
+      <p>Average graduating GPA differs only a little between the two groups, and how we draw that small
+        difference is itself an ethical choice. We plot the full 0 to 4.0 scale rather than zooming into the
+        3.0 to 4.0 band, because</p>
+    </section>
+
+    <figure class="figure float-wide" aria-label="Figure: average graduating GPA by entry type">
+      <div class="chart-box">
+        <p class="chart-title">Average graduating GPA by entry type <span class="muted small">(axis 0 to 4.0)</span></p>
+        <div style="height:300px"><canvas id="chart-gpa" aria-label="Bar chart of average graduating GPA by entry type on a full zero to four scale" role="img"></canvas></div>
+        <details class="data-table">
+          <summary>View data table</summary>
+          <table class="tbl">
+            <thead><tr><th>Group</th><th>Average graduating GPA</th></tr></thead>
+            <tbody>
+              <tr><td>Freshman admits</td><td>3.55</td></tr>
+              <tr><td>Transfer admits</td><td>3.42</td></tr>
+            </tbody>
+          </table>
+          <p class="muted small">Illustrative placeholder values. Replace them in <code>data.js</code>.</p>
+        </details>
+      </div>
+      <figcaption id="cap-gpa">a truncated axis would blow a fraction-of-a-point gap up into a visual chasm.
+        Hepworth and Church warn that polished charts can manufacture differences the data does not support, so an
+        honest axis lets readers judge the real size of the gap for themselves.
+        <span class="src">Source: Berkeley Data Digest, graduating GPA (illustrative figures).</span></figcaption>
+    </figure>
+
+    <p class="prose-wide">A small gap also fits the research on “transfer shock,” the temporary dip in GPA that
+      some students see right after they transfer. That research often finds the effect is smaller or
+      shorter-lived than the name suggests (Gentsch et al.).</p>
+
+    <p class="prose-wide">The biggest difference between the pathways shows up somewhere else, in <em>which</em>
+      majors transfer students end up in.</p>
+
+    <!-- ============ CHART 4: MAJOR DISTRIBUTION ============ -->
+    <section id="majors" class="prose-wide">
+      <h2>Transfer students cluster in certain majors</h2>
+      <p>Transfer admits are not spread evenly across the curriculum. When we sort majors by the share of degree
+        recipients who came in as transfers, the clustering is hard to miss.</p>
+    </section>
+
+    <figure class="figure float-wide" aria-label="Figure: transfer share of degree recipients by major">
+      <div class="chart-box">
+        <p class="chart-title">Transfer share of degree recipients, by major</p>
+        <div style="height:380px"><canvas id="chart-major" aria-label="Horizontal bar chart of the percentage of degree recipients who entered as transfers, by major" role="img"></canvas></div>
+        <details class="data-table">
+          <summary>View data table</summary>
+          <table class="tbl">
+            <thead><tr><th>Major</th><th>% transfer-origin</th></tr></thead>
+            <tbody>
+              <tr><td>Sociology</td><td>58%</td></tr>
+              <tr><td>Social Welfare</td><td>55%</td></tr>
+              <tr><td>Economics</td><td>41%</td></tr>
+              <tr><td>Political Science</td><td>38%</td></tr>
+              <tr><td>Molecular &amp; Cell Biology</td><td>27%</td></tr>
+              <tr><td>Computer Science</td><td>19%</td></tr>
+              <tr><td>Chemistry</td><td>16%</td></tr>
+            </tbody>
+          </table>
+          <p class="muted small">Illustrative placeholder values. Replace them in <code>data.js</code>.</p>
+        </details>
+      </div>
+      <figcaption id="cap-major">When some majors draw most of their graduates from the transfer pathway and
+        others almost none, “the transfer experience” really breaks apart by department. A lot depends on which
+        lower-division prerequisites transfer cleanly and which gatekept majors stay hard to enter as a junior.
+        <span class="src">Source: Berkeley Data Digest, “Degree Recipients by Major” (illustrative figures).</span></figcaption>
+    </figure>
+
+    <hr class="rule" />
+
+    <!-- ============ MAP / REGIONAL CONTEXT ============ -->
+    <section id="map" class="prose-wide">
+      <h2>Where transfers come from</h2>
+      <p>Berkeley’s transfers do not come from nowhere. They move through a statewide pipeline, and they cluster
+        by region. As the map below by Cesar Alesi Perez shows, a large share of UC transfers come from the Bay
+        Area. Students from nearby colleges may already know something about the campus before they ever enroll.
+        The map shows where community-college transfers to UC and CSU campuses come from.</p>
+    </section>
+
+    <figure class="figure float-wide" aria-label="Figure: regional representation of community-college transfers to UC and CSU">
+      <div class="chart-box">
+        <p class="chart-title">Regional representation of community-college transfers to UC &amp; CSU</p>
+        <iframe
+          title="Tableau Public map: Regional representation of community college transfers to UC and CSU campuses, by Cesar Alesi Perez"
+          src="https://public.tableau.com/views/UCCSUregionaltransferenrollmentv2/UCTransfers?:showVizHome=no&:embed=true&:toolbar=yes"
+          width="100%" height="520" style="border:0; border-radius:10px" loading="lazy">
+        </iframe>
+        <p class="muted small" style="margin-top:.6rem">If the map does not load in your browser, view it directly on
+          <a href="https://public.tableau.com/app/profile/cesar.alesi.perez/viz/UCCSUregionaltransferenrollmentv2/UCTransfers" target="_blank" rel="noopener">Tableau&nbsp;Public</a>.</p>
+      </div>
+      <figcaption id="cap-map">Where a transfer starts out can matter. Students from nearby colleges may arrive
+        already knowing something about Berkeley’s culture and resources, an advantage the outcome numbers never
+        record.
+        <span class="src">Source: Cesar Alesi Perez, Tableau Public (see Bibliography). National context: National
+        Student Clearinghouse, Tracking Transfer dashboard.</span></figcaption>
+    </figure>
+
+    <hr class="rule" />
+
+    <!-- ============ CONCLUSION ============ -->
+    <section id="conclusion" class="prose-wide">
+      <h2>What the numbers measure, and what they miss</h2>
+      <p>Put together, the charts make one argument. Freshman and transfer pathways are not two versions of the
+        same experience. Transfers finish at high rates, but they more often need extra time. They enter on a
+        compressed clock that turns an ordinary setback into a costly one. Their grades come out about the same.
+        And they bunch up in certain majors, depending on how prerequisites transfer. None of this is only about
+        how hard individual students work. It is also about conditions that each pathway sets up before anyone
+        arrives.</p>
+      <p>The most important part of this analysis may be what the data cannot show. Public datasets record things
+        like mentorship, research access, housing stability, and course availability either not at all or not in
+        a way that compares the two groups. That silence is not neutral. It is a decision about what counts, and
+        reading it through data feminism and visualization ethics turns the gap itself into evidence. Reform
+        efforts across the state, like the Public Policy Institute of California’s call to strengthen the transfer
+        pathway, point the same way (Public Policy Institute of California). Taking transfer students’ conditions
+        seriously is what makes their <em>access</em> mean something in practice, instead of a door that opens
+        onto an uneven road.</p>
+      <p>We take those silences and limits up in more detail, along with who they affect, on the
+        <a href="ethics.html">Ethical Considerations</a> page.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© 2026 Group 4 · DIGHUM 100 · UC Berkeley<br>
+        <span class="muted small">Comparing Freshman and Transfer Outcomes at UC Berkeley</span></div>
+      <nav aria-label="Footer">
+        <a href="index.html">Introduction</a><span class="footer-sep" aria-hidden="true">·</span><a href="about.html">About</a><span class="footer-sep" aria-hidden="true">·</span><a href="methods.html">Methods</a><span class="footer-sep" aria-hidden="true">·</span><a href="data-critique.html">Data Critique</a><span class="footer-sep" aria-hidden="true">·</span><a href="analysis.html">Analysis</a><span class="footer-sep" aria-hidden="true">·</span><a href="ethics.html">Ethics</a><span class="footer-sep" aria-hidden="true">·</span><a href="bibliography.html">Bibliography</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Chart.js (interactive charts) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/charts.js"></script>
+</body>
+</html>

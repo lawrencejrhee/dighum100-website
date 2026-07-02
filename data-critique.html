@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Critique · Freshman vs. Transfer Outcomes at UC Berkeley</title>
+  <meta name="description" content="A critical account of what Berkeley's public data includes, what it can illuminate, its limitations, and how our own assumptions shape its presentation." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true">G4</span>
+        <span class="brand-text">Freshman vs. Transfer at UC&nbsp;Berkeley<small>DIGHUM 100 · Group 4</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Introduction</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="methods.html">Methods</a></li>
+          <li><a href="data-critique.html" aria-current="page">Data Critique</a></li>
+          <li><a href="analysis.html">Analysis</a></li>
+          <li><a href="ethics.html">Ethics</a></li>
+          <li><a href="bibliography.html">Bibliography</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <span class="kicker">Data Critique</span>
+    <h1>What the data shows, and what it leaves out</h1>
+    <p class="lead prose-wide">Every dataset makes a quiet argument about what is worth counting. Before we let
+      Berkeley’s numbers speak, we want to know where they came from, what they can show, and what they leave out.</p>
+
+    <figure class="figure float-wide diagram" aria-label="Figure: what the data records versus what it leaves out">
+      <svg viewBox="0 0 720 360" role="img" aria-labelledby="ice-title ice-desc" width="100%">
+        <title id="ice-title">What the data records versus what it leaves out</title>
+        <desc id="ice-desc">An iceberg diagram. Above the waterline, a small visible tip lists what the dataset
+          records, such as graduation rate, time-to-degree, GPA, and major. Below the waterline, a much larger
+          hidden mass lists what it leaves out, such as mentorship, research access, housing stability, financial
+          aid, course availability, and belonging, which are the conditions that produce the outcomes.</desc>
+        <rect x="0" y="150" width="720" height="210" fill="#e7edf8"/>
+        <polygon points="360,150 200,150 152,250 232,352 488,352 568,250 520,150" fill="#cfe0fb" stroke="#9bb8e8"/>
+        <polygon points="280,150 440,150 400,92 320,92" fill="#ffffff" stroke="#9bb8e8"/>
+        <line x1="0" y1="150" x2="720" y2="150" stroke="#002676" stroke-width="2" stroke-dasharray="6 5"/>
+        <text x="14" y="144" fill="#002676" font-size="12" font-weight="700">RECORDED ↑</text>
+        <text x="14" y="170" fill="#0b3a8c" font-size="12" font-weight="700">LEFT OUT ↓</text>
+        <text x="360" y="118" text-anchor="middle" fill="#002676" font-family="Georgia, serif" font-weight="700" font-size="11">grad rate · GPA</text>
+        <text x="360" y="136" text-anchor="middle" fill="#002676" font-family="Georgia, serif" font-weight="700" font-size="11">time-to-degree · major</text>
+        <text x="360" y="205" text-anchor="middle" fill="#1c1d22" font-size="13">mentorship · research access</text>
+        <text x="360" y="240" text-anchor="middle" fill="#1c1d22" font-size="13">housing stability · financial aid</text>
+        <text x="360" y="275" text-anchor="middle" fill="#1c1d22" font-size="13">course availability · belonging</text>
+        <text x="360" y="320" text-anchor="middle" fill="#45474f" font-size="12" font-style="italic">…the conditions that produce the outcomes</text>
+      </svg>
+      <figcaption>The clean numbers are only the tip. Most of what shapes a transfer student’s experience never
+        surfaces in the dataset, and that submerged mass is what our data feminism lens asks us to look for.
+        <span class="src">Original illustration by Group 4.</span></figcaption>
+    </figure>
+
+    <div class="prose">
+      <h2>Where the data comes from</h2>
+      <p>This project uses existing, open-access institutional data rather than data we gathered ourselves. The
+        core tables come from UC Berkeley’s Office of Planning and Analysis, published through the
+        <em>Berkeley Data Digest</em>, and from the University of California’s system-wide UC InfoCenter. Both
+        report admit counts, enrollment counts, graduation and retention rates, time-to-degree, and degree
+        recipients by major, each broken out by entry type. We found the figures by working through the Data
+        Digest dashboards and exporting the tables behind them, then added statewide pipeline data from the
+        California Community Colleges Chancellor’s Office (DataVista and DataMart), the California State Auditor,
+        and national outcomes from the National Student Clearinghouse. We did not contact any human subjects.
+        Everything here is aggregate and already public.</p>
+
+      <h2>What the data can show us</h2>
+      <p>Because these sources report outcomes separately for freshman and transfer admits, we can compare the
+        two pathways with evidence instead of guessing. We can see how graduation rates differ, how long each
+        group takes to finish against its own “standard” clock, how graduating GPA lines up, and where transfer
+        students cluster by major. Set next to the Master Plan’s promise of access and the affordability case for
+        community college, the data can tell us whether the transfer route delivers more than entry, and whether
+        the outcomes are really comparable. That question matters to anyone choosing a way into Berkeley.</p>
+
+      <h2>What it can’t show, and why that matters</h2>
+      <p>The published data measures outcomes, but it says almost nothing about the conditions that produce them.
+        Things like incoming preparation, faculty mentorship, housing stability, financial aid, and a sense of
+        belonging are either unpublished or not reported in a way that compares the two pathways. That makes the
+        dataset look clean and complete, largely because the messier parts of student life never appear in it.
+        Following data feminism, we read this absence as a choice about what gets counted rather than a neutral
+        gap (Rezai). The categories themselves, like “transfer,” “on-time,” and “success,” are built by people,
+        and they decide whose experience becomes visible. The definitions used by the Clearinghouse and DataVista
+        show how this works. A “transfer to CSU or UC” counts only students who meet specific administrative
+        conditions, not everyone who set out to transfer. Someone who wanted to transfer but never cleared those
+        conditions simply does not appear.</p>
+
+      <h2>Our own assumptions and biases</h2>
+      <p>We are six Berkeley undergraduates, and our standpoint shapes this project. We started with a hunch, that
+        transfer students face a harder and more compressed road, and there is always a risk of reading the data
+        to confirm what you already believe. We have tried to guard against that in a few ways. We state our
+        thesis openly. We refuse comparisons the data cannot support, like raw time-to-degree across pathways. And
+        we draw the charts honestly. Our GPA figure, for example, uses a full 0 to 4.0 axis rather than a
+        zoomed-in one that would make a small gap look dramatic, which follows Hepworth and Church’s visualization
+        ethics. Our choice of majors, sources, and framing is interpretive too, and a different group could put
+        different numbers in front. We also inherit the institutions’ categories. By comparing “freshman” and
+        “transfer” at all, we repeat a binary that flattens the variety inside each group.</p>
+
+      <h2>Bottom line</h2>
+      <p>Berkeley’s data is trustworthy for what it measures and genuinely useful for comparing outcomes across
+        the two pathways. It is also partial by design. We offer it as a starting point for questions about
+        support and equity, not as the final word on the transfer experience, and we count its silences as
+        findings of their own.</p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© 2026 Group 4 · DIGHUM 100 · UC Berkeley<br>
+        <span class="muted small">Comparing Freshman and Transfer Outcomes at UC Berkeley</span></div>
+      <nav aria-label="Footer">
+        <a href="index.html">Introduction</a><span class="footer-sep" aria-hidden="true">·</span><a href="about.html">About</a><span class="footer-sep" aria-hidden="true">·</span><a href="methods.html">Methods</a><span class="footer-sep" aria-hidden="true">·</span><a href="data-critique.html">Data Critique</a><span class="footer-sep" aria-hidden="true">·</span><a href="analysis.html">Analysis</a><span class="footer-sep" aria-hidden="true">·</span><a href="ethics.html">Ethics</a><span class="footer-sep" aria-hidden="true">·</span><a href="bibliography.html">Bibliography</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction · Freshman vs. Transfer Outcomes at UC Berkeley</title>
+  <meta name="description" content="A Digital Humanities project (DIGHUM 100, Group 4) comparing graduation, time-to-degree, GPA, and major outcomes for UC Berkeley's freshman and transfer admits, and asking what the public data shows and hides." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">
+        <span class="mark" aria-hidden="true">G4</span>
+        <span class="brand-text">Freshman vs. Transfer at UC&nbsp;Berkeley<small>DIGHUM 100 · Group 4</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Introduction</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="methods.html">Methods</a></li>
+          <li><a href="data-critique.html">Data Critique</a></li>
+          <li><a href="analysis.html">Analysis</a></li>
+          <li><a href="ethics.html">Ethics</a></li>
+          <li><a href="bibliography.html">Bibliography</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Digital Humanities · UC Berkeley</span>
+      <h1>Comparing Freshman and Transfer Outcomes at UC&nbsp;Berkeley</h1>
+      <p class="lead">Most people think of Berkeley admission as one door that you either get through or you
+        don’t, but there are really two of them. This project follows freshman and transfer admits after they
+        walk through, and asks how their paths compare.</p>
+      <div class="btn-row">
+        <a class="btn" href="analysis.html">Read the analysis</a>
+        <a class="btn secondary" href="methods.html">How we did it</a>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" class="container">
+
+    <div class="prose-wide">
+      <h2>Our research question</h2>
+      <p>Berkeley admits students two ways. A <strong>freshman</strong> applicant is usually a graduating
+        high-school senior. A <strong>transfer</strong> applicant is usually a California community-college
+        student who finished lower-division coursework before applying. They apply under different requirements,
+        come from separate pools, and spend different amounts of time on campus, yet they leave with the same
+        Berkeley degree. We wanted to set the two records next to each other and measure the gap instead of
+        assuming it.</p>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:1.4rem">
+      <div class="card rq">
+        <p class="num">Question 1</p>
+        <p><strong>The outcomes.</strong> How do graduation rates and time-to-degree differ across the two
+          admission pathways at Berkeley?</p>
+      </div>
+      <div class="card rq">
+        <p class="num">Question 2</p>
+        <p><strong>The data itself.</strong> What do UC’s public datasets show, and what do they hide, about the
+          experiences behind those outcomes?</p>
+      </div>
+    </div>
+
+    <hr class="rule" />
+
+    <div class="prose-wide">
+      <h2>Why it matters</h2>
+      <p>The University of California runs one of the largest transfer systems in the country, and Berkeley’s two
+        pathways grew out of the state’s long history of public higher education. The transfer route was built as
+        a kind of promise. A student who does not get in as a freshman should still have a real shot at a top
+        research university. But getting through the door is not the same as having the same experience once you
+        are inside. A transfer student often has just two years to sort out major prerequisites, housing,
+        financial aid, and registration while also learning how the campus works. A freshman has four years for
+        the same tasks, with more room to switch majors or find research. Those differences in the pathway end up
+        shaping the outcomes that show up later in the data.</p>
+      <p>We argue that the two pathways are not the same experience wearing different labels. Gaps in graduation
+        rate, time-to-degree, GPA, and major completion come partly from how individual students do, but they
+        also come from the conditions each pathway builds in before a student ever arrives.</p>
+    </div>
+
+    <figure class="figure float-wide diagram" aria-labelledby="doors-cap">
+      <svg viewBox="0 0 720 220" role="img" aria-labelledby="doors-title doors-desc" width="100%">
+        <title id="doors-title">Two admission pathways into UC Berkeley</title>
+        <desc id="doors-desc">A diagram showing two doors. One is a freshman pathway from high school and the
+          other is a transfer pathway from community college. Both lead to the same Berkeley degree, but along
+          different timelines.</desc>
+        <!-- freshman path -->
+        <rect x="20" y="40" width="170" height="60" rx="10" fill="#e7edf8" stroke="#002676"/>
+        <text x="105" y="66" text-anchor="middle" font-family="Georgia, serif" font-weight="700" fill="#002676" font-size="14">High school senior</text>
+        <text x="105" y="86" text-anchor="middle" fill="#45474f" font-size="12">Freshman applicant</text>
+        <!-- transfer path -->
+        <rect x="20" y="120" width="170" height="60" rx="10" fill="#fff4d6" stroke="#b25a00"/>
+        <text x="105" y="146" text-anchor="middle" font-family="Georgia, serif" font-weight="700" fill="#7a4d00" font-size="14">Community college</text>
+        <text x="105" y="166" text-anchor="middle" fill="#45474f" font-size="12">Transfer applicant</text>
+        <!-- arrows -->
+        <line x1="190" y1="70" x2="300" y2="95" stroke="#002676" stroke-width="3" marker-end="url(#ar)"/>
+        <line x1="190" y1="150" x2="300" y2="120" stroke="#b25a00" stroke-width="3" marker-end="url(#ar)"/>
+        <defs>
+          <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#45474f"/>
+          </marker>
+        </defs>
+        <!-- the door -->
+        <rect x="305" y="70" width="90" height="80" rx="8" fill="#002676"/>
+        <circle cx="384" cy="112" r="4" fill="#fdb515"/>
+        <text x="350" y="60" text-anchor="middle" fill="#002676" font-family="Georgia, serif" font-size="13" font-weight="700">Berkeley</text>
+        <!-- timelines -->
+        <line x1="400" y1="95" x2="690" y2="95" stroke="#002676" stroke-width="3"/>
+        <text x="545" y="86" text-anchor="middle" fill="#002676" font-size="12">≈ 4 years to degree (freshman clock)</text>
+        <line x1="560" y1="120" x2="690" y2="120" stroke="#b25a00" stroke-width="3"/>
+        <text x="625" y="140" text-anchor="middle" fill="#7a4d00" font-size="12">≈ 2 years (transfer clock)</text>
+      </svg>
+      <figcaption id="doors-cap">Two pathways lead to one degree, but on very different timelines. Transfers
+        enter as juniors and have to fit into two years what freshmen spread across four.
+        <span class="src">Original illustration by Group 4.</span></figcaption>
+    </figure>
+
+    <hr class="rule" />
+
+    <div class="prose-wide">
+      <h2>Theoretical framing</h2>
+      <p>We do not treat the numbers as neutral. Two lenses guide how we read them.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="callout lens" style="margin:1rem 0">
+        <h3>Data feminism</h3>
+        <p>Following Yasamin Rezai, we ask <em>who</em> gets to define a “successful” transfer and <em>whose</em>
+          experience gets harder to see once transfer becomes a single number. The categories in a dataset are
+          not neutral. As Rezai writes, “binaries and constructed categories are the product of cultural and
+          historical sets of values and biases” (Rezai).</p>
+      </div>
+      <div class="callout lens" style="margin:1rem 0">
+        <h3>Visualization ethics</h3>
+        <p>Following Hepworth and Church, we read polished charts with some suspicion. They argue that a
+          responsible visualization should weigh the “appropriateness, authenticity, veracity, and feasibility”
+          of its data before it goes on screen. A clean chart can make an institution’s categories look finished
+          and obvious when they are neither.</p>
+      </div>
+    </div>
+
+    <p class="prose-wide">Seen through these two lenses, the gaps in Berkeley’s public data start to look less
+      like accidents and more like decisions about what is worth counting. We treat those gaps as part of our
+      evidence, not as missing numbers to apologize for.</p>
+
+    <div class="callout note">
+      <h3>Start anywhere</h3>
+      <p style="margin-bottom:.4rem">This site is organized as a set of tabs that mirror our project components:</p>
+      <p style="margin:0">
+        <a href="about.html">About &amp; roles</a> ·
+        <a href="methods.html">Methods &amp; tools</a> ·
+        <a href="data-critique.html">Data critique</a> ·
+        <a href="analysis.html">Analysis &amp; visualizations</a> ·
+        <a href="ethics.html">Ethical considerations</a> ·
+        <a href="bibliography.html">Bibliography</a>
+      </p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© 2026 Group 4 · DIGHUM 100 · UC Berkeley<br>
+        <span class="muted small">Comparing Freshman and Transfer Outcomes at UC Berkeley</span></div>
+      <nav aria-label="Footer">
+        <a href="index.html">Introduction</a><span class="footer-sep" aria-hidden="true">·</span><a href="about.html">About</a><span class="footer-sep" aria-hidden="true">·</span><a href="methods.html">Methods</a><span class="footer-sep" aria-hidden="true">·</span><a href="data-critique.html">Data Critique</a><span class="footer-sep" aria-hidden="true">·</span><a href="analysis.html">Analysis</a><span class="footer-sep" aria-hidden="true">·</span><a href="ethics.html">Ethics</a><span class="footer-sep" aria-hidden="true">·</span><a href="bibliography.html">Bibliography</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
