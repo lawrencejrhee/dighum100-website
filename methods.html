@@ -215,14 +215,22 @@
       <p class="prose-wide">We used <strong>Python with pandas</strong> to clean and aggregate the CSV tables. The
         main cleaning and transformation steps were:</p>
       <ul class="prose-wide">
-        <li>Loading each Data Digest / InfoCenter table and standardizing column names and entry-type labels
-          (“freshman” vs. “transfer”) so the two sources could be compared consistently.</li>
-        <li>Filtering to the populations we actually compare (degree recipients, split by entry type), and
-          dropping rows that mix pathways or that report suppressed or aggregate-only cells.</li>
-        <li>Aggregating to compute, per entry type: <strong>transfer share by major</strong>,
-          <strong>graduation rate</strong>, and <strong>average graduating GPA</strong>.
+        <li>Loading each Data Digest and InfoCenter table and forcing the count
+          columns to numbers, since several import as text with commas (e.g. “1,074”).</li>
+        <li>Filtering each table to the population it actually measures: degree
+          recipients by entry type, entering cohorts old enough to have finished, and
+          transfer applicants by major. We drop the small unclassifiable “Other” entrant
+          group and set minimum-size thresholds (majors with at least 100 recipients or
+          applicants) so tiny programs don’t distort the by-major charts.</li>
+        <li>Aggregating to compute <strong>transfer share by major</strong>,
+          <strong>on-time graduation by entry type</strong>, <strong>graduating GPA by
+            entry type</strong>, and <strong>transfer admit rate by major</strong>. Admit
+          rate and GPA are computed on pooled totals rather than as averages of averages:
+          admit rate is total admits over total applicants across years, and GPA is
+          weighted by the number of graduates in each band.
         </li>
-        <li>Recording every decision (filters, groupings, exclusions) so the pipeline is reproducible.</li>
+        <li>Recording each cleaning decision (filters, groupings, thresholds) so the
+          pipeline is reproducible.</li>
       </ul>
       <div class="callout note">
         <h3>Why we don’t compare time-to-degree directly</h3>
