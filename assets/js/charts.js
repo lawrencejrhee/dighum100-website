@@ -113,4 +113,27 @@
       }
     });
   }
+  // 5) Financial pressure — grouped bar ----------------------------------
+  if (D.financialPressure) {
+    var fp = D.financialPressure;
+    make("chart-financial", {
+      type: "bar",
+      data: {
+        labels: fp.metrics,
+        datasets: [
+          { label: "Freshman admits", data: fp.freshman, backgroundColor: BLUE, borderRadius: 6 },
+          { label: "Transfer admits", data: fp.transfer, backgroundColor: GOLD, borderRadius: 6 }
+        ]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true, max: 100, ticks: { callback: function (v) { return v + "%"; } },
+               title: { display: true, text: "Share of students" } }
+        },
+        plugins: {
+          tooltip: { callbacks: { label: function (c) { return c.dataset.label + ": " + c.parsed.y + "%"; } } }
+        }
+      }
+    });
+  }
 })();

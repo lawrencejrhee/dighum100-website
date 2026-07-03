@@ -53,7 +53,16 @@ window.DH_DATA = {
     note: "Placeholder values. Replace with transfer share by major computed from the ‘Degree Recipients by Major’ table."
   },
 
-  /* ---- 5) Regional / map embed -----------------------------------------
+  /* ---- 5) Financial pressure by entry type ------------------------------
+     Compare key financial-aid indicators between the two pathways.       */
+  financialPressure: {
+    metrics: ["Pell Grant recipients", "First-generation students"],
+    freshman: [35, 26],
+    transfer: [45, 43],
+    note: "Pell Grant: UC system-wide 2021-22, UC InfoCenter. First-generation: UC Berkeley admissions student profile."
+  },
+
+  /* ---- 6) Regional / map embed -----------------------------------------
      Interactive map is embedded from Tableau Public (Cesar Alesi Perez,
      cited in the bibliography). If the embed URL changes, update it in
      analysis.html where the <iframe> lives.                               */
