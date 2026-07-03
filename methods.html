@@ -37,30 +37,87 @@
       Berkeley’s default dashboard views at face value. That meant pulling the raw tables behind the charts,
       cleaning them in Python, and being honest about what the data can and cannot support.</p>
 
-    <figure class="figure float-wide diagram" aria-label="Figure: California's three-tier public higher education system">
-      <svg viewBox="0 0 720 320" role="img" aria-labelledby="mp-title mp-desc" width="100%">
-        <title id="mp-title">California's three-tier public higher education system</title>
-        <desc id="mp-desc">A pyramid diagram. The University of California sits at the small top tier (the
-          top 12.5% of high-school graduates, and research universities), the California State University forms the
-          middle tier, and the California Community Colleges form the wide open-access base that teaches the
-          lower division. A transfer-pathway arrow rises from the base up to the top.</desc>
-        <polygon points="300,95 420,95 460,150 260,150" fill="#002676"/>
-        <polygon points="260,150 460,150 520,210 200,210" fill="#0b3a8c"/>
-        <polygon points="200,210 520,210 590,278 130,278" fill="#fff4d6" stroke="#e9c879"/>
-        <text x="360" y="126" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-weight="700" font-size="15">UC</text>
-        <text x="360" y="142" text-anchor="middle" fill="#dfe7f7" font-size="9.5">top 12.5% · research</text>
-        <text x="360" y="184" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-weight="700" font-size="15">CSU</text>
-        <text x="360" y="200" text-anchor="middle" fill="#dfe7f7" font-size="9.5">bachelor’s &amp; master’s</text>
-        <text x="360" y="248" text-anchor="middle" fill="#7a4d00" font-family="Georgia, serif" font-weight="700" font-size="15">Community Colleges</text>
-        <text x="360" y="265" text-anchor="middle" fill="#7a4d00" font-size="10">open access · lower division</text>
-        <path d="M150,268 C 86,205 88,150 252,120" fill="none" stroke="#b25a00" stroke-width="3" marker-end="url(#mpar)"/>
-        <text x="78" y="160" fill="#7a4d00" font-size="11" transform="rotate(-72 78 160)">Transfer pathway</text>
-        <defs><marker id="mpar" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
-          <path d="M0,0 L8,3 L0,6 Z" fill="#b25a00"/></marker></defs>
+    <figure class="figure float-wide diagram" aria-label="Figure: California's 1960 Master Plan and the two pathways into Berkeley">
+      <svg viewBox="0 0 740 400" role="img" aria-labelledby="mp-title mp-desc" width="100%">
+        <title id="mp-title">California's 1960 Master Plan and the two pathways into Berkeley</title>
+        <desc id="mp-desc">A trapezoid divided into three horizontal sections represents California's
+          three-tier public higher education system. The narrow top section is UC (top 12.5%), the middle
+          is CSU (top 33.3%), and the wide base is community colleges (open access, ~75% of students).
+          Two arrows leave the shape toward a Berkeley badge on the right: a freshman pathway from UC and
+          a transfer pathway from community colleges. Only 1 in 5 transfer-intending CCC students reaches
+          a university.</desc>
+
+        <defs>
+          <marker id="mpBlue" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#002676"/>
+          </marker>
+          <marker id="mpGold" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#b25a00"/>
+          </marker>
+        </defs>
+
+        <!-- ========== UNIFIED TRAPEZOID - three sections ========== -->
+
+        <!-- UC section (top, narrow) -->
+        <polygon points="185,30 355,30 385,120 155,120" fill="#002676"/>
+        <text x="270" y="62" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-weight="700" font-size="16">UC</text>
+        <text x="270" y="80" text-anchor="middle" fill="#dfe7f7" font-size="10">Research · doctoral degrees</text>
+        <text x="270" y="96" text-anchor="middle" fill="#fdb515" font-size="10" font-weight="700">Top 12.5% of HS class</text>
+
+        <!-- Divider line UC/CSU -->
+        <line x1="155" y1="120" x2="385" y2="120" stroke="#fff" stroke-width="2"/>
+
+        <!-- CSU section (middle) -->
+        <polygon points="155,120 385,120 415,210 125,210" fill="#0b3a8c"/>
+        <text x="270" y="152" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-weight="700" font-size="16">CSU</text>
+        <text x="270" y="170" text-anchor="middle" fill="#dfe7f7" font-size="10">Bachelor's &amp; master's degrees</text>
+        <text x="270" y="186" text-anchor="middle" fill="#c9d8f3" font-size="10" font-weight="700">Top 33.3% of HS class</text>
+
+        <!-- Divider line CSU/CCC -->
+        <line x1="125" y1="210" x2="415" y2="210" stroke="#fff" stroke-width="2"/>
+
+        <!-- CCC section (bottom, wide) -->
+        <polygon points="125,210 415,210 460,330 80,330" fill="#fff4d6" stroke="#e9c879" stroke-width="1.5"/>
+        <text x="270" y="245" text-anchor="middle" fill="#7a4d00" font-family="Georgia, serif" font-weight="700" font-size="16">Community Colleges</text>
+        <text x="270" y="265" text-anchor="middle" fill="#45474f" font-size="10">Open access - lower division</text>
+        <text x="270" y="281" text-anchor="middle" fill="#45474f" font-size="10">Vocational &amp; academic instruction</text>
+        <text x="270" y="297" text-anchor="middle" fill="#45474f" font-size="10">Designed to be tuition-free</text>
+        <text x="270" y="317" text-anchor="middle" fill="#b25a00" font-size="10" font-weight="700">~75% of CA public undergrads start here</text>
+
+        <!-- ========== PATHWAY ARROWS ========== -->
+
+        <!-- Freshman pathway: UC → Berkeley -->
+        <line x1="385" y1="75" x2="540" y2="75" stroke="#002676" stroke-width="3" marker-end="url(#mpBlue)"/>
+        <text x="462" y="60" text-anchor="middle" fill="#002676" font-size="11" font-weight="700">Freshman pathway</text>
+        <text x="462" y="100" text-anchor="middle" fill="#45474f" font-size="10">4 years at Berkeley</text>
+
+        <!-- Transfer pathway: CCC → Berkeley (curves up from trapezoid edge) -->
+        <path d="M440,270 C490,270 530,230 555,185" fill="none" stroke="#b25a00" stroke-width="3" marker-end="url(#mpGold)"/>
+        <text x="530" y="290" text-anchor="middle" fill="#7a4d00" font-size="11" font-weight="700">Transfer pathway</text>
+        <text x="530" y="306" text-anchor="middle" fill="#45474f" font-size="10">2 years at Berkeley</text>
+        <text x="530" y="322" text-anchor="middle" fill="#7a4d00" font-size="9" font-style="italic">Only 1 in 5 reach a university</text>
+
+        <!-- ========== BERKELEY BADGE ========== -->
+        <rect x="555" y="55" width="160" height="130" rx="14" fill="#002676"/>
+        <text x="635" y="90" text-anchor="middle" fill="#fdb515" font-family="Georgia, serif" font-weight="700" font-size="18">UC Berkeley</text>
+        <line x1="580" y1="100" x2="690" y2="100" stroke="#fdb515" stroke-width="1" opacity="0.4"/>
+        <text x="635" y="120" text-anchor="middle" fill="#dfe7f7" font-size="11">Same degree</text>
+        <text x="635" y="136" text-anchor="middle" fill="#dfe7f7" font-size="11">Different timelines</text>
+        <text x="635" y="152" text-anchor="middle" fill="#dfe7f7" font-size="11">Different conditions</text>
+        <text x="635" y="174" text-anchor="middle" fill="#fdb515" font-size="11" font-weight="700">Two front doors</text>
+
+        <!-- ========== LABEL ========== -->
+        <text x="270" y="365" text-anchor="middle" fill="#45474f" font-size="11" font-family="Georgia, serif" font-style="italic">California's 1960 Master Plan</text>
+        <text x="270" y="382" text-anchor="middle" fill="#45474f" font-size="11" font-family="Georgia, serif" font-style="italic">for Higher Education</text>
       </svg>
-      <figcaption>California’s 1960 Master Plan sorted public higher education into three tiers and made transfer
-        the bridge between them. That structure still defines Berkeley’s two front doors today.
-        <span class="src">Original illustration by Group 4.</span></figcaption>
+      <figcaption>The 1960 Master Plan split California's public higher education into three tiers and made transfer
+        the bridge between them. UC draws from the top 12.5% of high school graduates, CSU from the top 33.3%, and
+        community colleges admit anyone. About 75% of California's public undergraduates start at community college,
+        but a 2024 state audit found that only 1 in 5 transfer-intending students actually reaches a university
+        (Echelman). Both the freshman and transfer paths lead to the same Berkeley degree - on different timelines
+        and under different conditions. That structure is what this project studies.
+        <span class="src">Source: University of California, Office of the President, "California Master Plan for Higher
+          Education." Audit data: California State Auditor, Report 2023-123. Original illustration by Group 4.</span></figcaption>
     </figure>
 
     <nav class="toc prose-wide" aria-label="On this page">
