@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Methods · Freshman vs. Transfer Outcomes at UC Berkeley</title>
-  <meta name="description" content="Transparent documentation of data sources, cleaning decisions, and tools (Python/pandas, Tableau Public) used to compare UC Berkeley freshman and transfer outcomes." />
+  <meta name="description"
+    content="Transparent documentation of data sources, cleaning decisions, and tools (Python/pandas, Tableau Public) used to compare UC Berkeley freshman and transfer outcomes." />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -37,30 +40,39 @@
       Berkeley’s default dashboard views at face value. That meant pulling the raw tables behind the charts,
       cleaning them in Python, and being honest about what the data can and cannot support.</p>
 
-    <figure class="figure float-wide diagram" aria-label="Figure: California's three-tier public higher education system">
+    <figure class="figure float-wide diagram"
+      aria-label="Figure: California's three-tier public higher education system">
       <svg viewBox="0 0 720 320" role="img" aria-labelledby="mp-title mp-desc" width="100%">
         <title id="mp-title">California's three-tier public higher education system</title>
         <desc id="mp-desc">A pyramid diagram. The University of California sits at the small top tier (the
           top 12.5% of high-school graduates, and research universities), the California State University forms the
           middle tier, and the California Community Colleges form the wide open-access base that teaches the
           lower division. A transfer-pathway arrow rises from the base up to the top.</desc>
-        <polygon points="300,95 420,95 460,150 260,150" fill="#002676"/>
-        <polygon points="260,150 460,150 520,210 200,210" fill="#0b3a8c"/>
-        <polygon points="200,210 520,210 590,278 130,278" fill="#fff4d6" stroke="#e9c879"/>
-        <text x="360" y="126" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-weight="700" font-size="15">UC</text>
+        <polygon points="300,95 420,95 460,150 260,150" fill="#002676" />
+        <polygon points="260,150 460,150 520,210 200,210" fill="#0b3a8c" />
+        <polygon points="200,210 520,210 590,278 130,278" fill="#fff4d6" stroke="#e9c879" />
+        <text x="360" y="126" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-weight="700"
+          font-size="15">UC</text>
         <text x="360" y="142" text-anchor="middle" fill="#dfe7f7" font-size="9.5">top 12.5% · research</text>
-        <text x="360" y="184" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-weight="700" font-size="15">CSU</text>
+        <text x="360" y="184" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-weight="700"
+          font-size="15">CSU</text>
         <text x="360" y="200" text-anchor="middle" fill="#dfe7f7" font-size="9.5">bachelor’s &amp; master’s</text>
-        <text x="360" y="248" text-anchor="middle" fill="#7a4d00" font-family="Georgia, serif" font-weight="700" font-size="15">Community Colleges</text>
+        <text x="360" y="248" text-anchor="middle" fill="#7a4d00" font-family="Georgia, serif" font-weight="700"
+          font-size="15">Community Colleges</text>
         <text x="360" y="265" text-anchor="middle" fill="#7a4d00" font-size="10">open access · lower division</text>
-        <path d="M150,268 C 86,205 88,150 252,120" fill="none" stroke="#b25a00" stroke-width="3" marker-end="url(#mpar)"/>
+        <path d="M150,268 C 86,205 88,150 252,120" fill="none" stroke="#b25a00" stroke-width="3"
+          marker-end="url(#mpar)" />
         <text x="78" y="160" fill="#7a4d00" font-size="11" transform="rotate(-72 78 160)">Transfer pathway</text>
-        <defs><marker id="mpar" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
-          <path d="M0,0 L8,3 L0,6 Z" fill="#b25a00"/></marker></defs>
+        <defs>
+          <marker id="mpar" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#b25a00" />
+          </marker>
+        </defs>
       </svg>
       <figcaption>California’s 1960 Master Plan sorted public higher education into three tiers and made transfer
         the bridge between them. That structure still defines Berkeley’s two front doors today.
-        <span class="src">Original illustration by Group 4.</span></figcaption>
+        <span class="src">Original illustration by Group 4.</span>
+      </figcaption>
     </figure>
 
     <nav class="toc prose-wide" aria-label="On this page">
@@ -78,17 +90,49 @@
       <p class="prose-wide">Our core comparison comes from two UC Berkeley sources, supplemented by statewide and
         national context that helps situate Berkeley’s transfer population within a larger system.</p>
       <div class="table-scroll">
-      <table class="tbl">
-        <thead><tr><th>Source</th><th>What we used it for</th><th>Type</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Berkeley Data Digest</strong>, Graduation Rates &amp; Retention and Degree Recipients by Major (UC Berkeley Office of Planning &amp; Analysis)</td><td>Graduation rate, graduating GPA, and major distribution by entry type</td><td>Institutional dashboard (Tableau) with downloadable tables</td></tr>
-          <tr><td><strong>UC InfoCenter</strong>, Undergraduate Graduation Rates and Time to Degree (UC Office of the President)</td><td>System-wide admit and enrollment counts, time-to-degree, and demographic breakdowns by pathway</td><td>Aggregate public data</td></tr>
-          <tr><td><strong>CCC DataVista &amp; DataMart</strong> (CA Community Colleges Chancellor’s Office)</td><td>Context on the transfer pipeline (ADT completion, accumulated units, transfer destinations)</td><td>Statewide metrics platforms</td></tr>
-          <tr><td><strong>California State Auditor</strong>, Report 2024-111</td><td>Policy context on advising, units, requirements, and housing across CCC/CSU/UC</td><td>Audit report</td></tr>
-          <tr><td><strong>National Student Clearinghouse</strong>, Tracking Transfer dashboard</td><td>National retention and bachelor’s-completion outcomes, filterable by race and income</td><td>Research dashboard</td></tr>
-          <tr><td><strong>Regional transfer map</strong> (Cesar Alesi Perez, Tableau Public)</td><td>Where UC/CSU transfers come from regionally (embedded on the Analysis page)</td><td>Interactive visualization</td></tr>
-        </tbody>
-      </table>
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>What we used it for</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Berkeley Data Digest</strong>, Graduation Rates &amp; Retention and Degree Recipients by Major
+                (UC Berkeley Office of Planning &amp; Analysis)</td>
+              <td>Graduation rate, graduating GPA, and major distribution by entry type</td>
+              <td>Institutional dashboard (Tableau) with downloadable tables</td>
+            </tr>
+            <tr>
+              <td><strong>UC InfoCenter</strong>, Undergraduate Graduation Rates and Time to Degree (UC Office of the
+                President)</td>
+              <td>System-wide admit and enrollment counts, time-to-degree, and demographic breakdowns by pathway</td>
+              <td>Aggregate public data</td>
+            </tr>
+            <tr>
+              <td><strong>CCC DataVista &amp; DataMart</strong> (CA Community Colleges Chancellor’s Office)</td>
+              <td>Context on the transfer pipeline (ADT completion, accumulated units, transfer destinations)</td>
+              <td>Statewide metrics platforms</td>
+            </tr>
+            <tr>
+              <td><strong>California State Auditor</strong>, Report 2024-111</td>
+              <td>Policy context on advising, units, requirements, and housing across CCC/CSU/UC</td>
+              <td>Audit report</td>
+            </tr>
+            <tr>
+              <td><strong>National Student Clearinghouse</strong>, Tracking Transfer dashboard</td>
+              <td>National retention and bachelor’s-completion outcomes, filterable by race and income</td>
+              <td>Research dashboard</td>
+            </tr>
+            <tr>
+              <td><strong>Regional transfer map</strong> (Cesar Alesi Perez, Tableau Public)</td>
+              <td>Where UC/CSU transfers come from regionally (embedded on the Analysis page)</td>
+              <td>Interactive visualization</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -110,7 +154,8 @@
         <li>Filtering to the populations we actually compare (degree recipients, split by entry type), and
           dropping rows that mix pathways or that report suppressed or aggregate-only cells.</li>
         <li>Aggregating to compute, per entry type: <strong>transfer share by major</strong>,
-          <strong>graduation rate</strong>, and <strong>average graduating GPA</strong>.</li>
+          <strong>graduation rate</strong>, and <strong>average graduating GPA</strong>.
+        </li>
         <li>Recording every decision (filters, groupings, exclusions) so the pipeline is reproducible.</li>
       </ul>
       <div class="callout note">
@@ -132,28 +177,61 @@
     </section>
 
     <section id="metrics">
-      <h2>The four comparison metrics</h2>
+      <h2>The four measures</h2>
       <div class="grid grid-2">
-        <div class="card"><h3>Graduation rate</h3><p>Share of each entry cohort that completes a degree, by pathway-appropriate checkpoint.</p></div>
-        <div class="card"><h3>Time-to-degree</h3><p>Average time to completion, read against each pathway’s standard timeframe.</p></div>
-        <div class="card"><h3>Graduating GPA</h3><p>Average GPA at graduation by entry type, shown on an honest, non-truncated axis.</p></div>
-        <div class="card"><h3>Major distribution</h3><p>Transfer share of degree recipients within selected majors.</p></div>
+        <div class="card">
+          <h3>On-time graduation</h3>
+          <p>Share of each entry cohort that graduates within its pathway's standard window: about four years for
+            freshmen, two for transfers.</p>
+        </div>
+        <div class="card">
+          <h3>Graduating GPA</h3>
+          <p>Average GPA at graduation by entry type, tracked over time.</p>
+        </div>
+        <div class="card">
+          <h3>Transfer admit rate by major</h3>
+          <p>Share of transfer applicants admitted, broken out by major.</p>
+        </div>
+        <div class="card">
+          <h3>Transfer share by major</h3>
+          <p>Transfer share of degree recipients within selected majors.</p>
+        </div>
       </div>
       <p class="prose-wide" style="margin-top:1.2rem">See all four rendered as interactive charts on the
-        <a href="analysis.html">Analysis</a> page.</p>
+        <a href="analysis.html">Analysis</a> page.
+      </p>
     </section>
 
     <section id="tools">
       <h2>Tools we used and why</h2>
       <div class="table-scroll">
-      <table class="tbl">
-        <thead><tr><th>Tool</th><th>Used for</th><th>Why this choice</th></tr></thead>
-        <tbody>
-          <tr><td>Python + pandas</td><td>Cleaning, filtering, and aggregating the raw CSV tables</td><td>Reproducible, scriptable steps we can document and re-run, which is more transparent than editing spreadsheets by hand</td></tr>
-          <tr><td>Tableau Public</td><td>Exploring the data and producing shareable, inspectable charts</td><td>Keeps the underlying data viewable by the audience, matching our visualization-ethics commitment</td></tr>
-          <tr><td>HTML / CSS / JavaScript + Chart.js</td><td>This public-facing website and its interactive charts</td><td>Lightweight, open, and free to host on GitHub Pages. Charts read from a single editable data file</td></tr>
-        </tbody>
-      </table>
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Used for</th>
+              <th>Why this choice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Python + pandas</td>
+              <td>Cleaning, filtering, and aggregating the raw CSV tables</td>
+              <td>Reproducible, scriptable steps we can document and re-run, which is more transparent than editing
+                spreadsheets by hand</td>
+            </tr>
+            <tr>
+              <td>Tableau Public</td>
+              <td>Exploring the data and producing shareable, inspectable charts</td>
+              <td>Keeps the underlying data viewable by the audience, matching our visualization-ethics commitment</td>
+            </tr>
+            <tr>
+              <td>HTML / CSS / JavaScript + Chart.js</td>
+              <td>This public-facing website and its interactive charts</td>
+              <td>Lightweight, open, and free to host on GitHub Pages. Charts read from a single editable data file</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <p class="muted small">We used Python rather than R because the group was more comfortable with pandas for
         tabular cleaning, and that shows up most in the aggregation steps above. We also kept the raw tables
@@ -167,7 +245,8 @@
         produce them. Things like incoming preparation, faculty contact, housing stability, and financial aid are
         not reported in a way that compares the two pathways. We treat that silence as a finding rather than
         something to paper over. The <a href="data-critique.html">Data Critique</a> and
-        <a href="ethics.html">Ethical Considerations</a> take it up in more detail.</p>
+        <a href="ethics.html">Ethical Considerations</a> take it up in more detail.
+      </p>
     </section>
 
   </main>
@@ -175,11 +254,19 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div>© 2026 Group 4 · DIGHUM 100 · UC Berkeley<br>
-        <span class="muted small">Comparing Freshman and Transfer Outcomes at UC Berkeley</span></div>
+        <span class="muted small">Comparing Freshman and Transfer Outcomes at UC Berkeley</span>
+      </div>
       <nav aria-label="Footer">
-        <a href="index.html">Introduction</a><span class="footer-sep" aria-hidden="true">·</span><a href="about.html">About</a><span class="footer-sep" aria-hidden="true">·</span><a href="methods.html">Methods</a><span class="footer-sep" aria-hidden="true">·</span><a href="data-critique.html">Data Critique</a><span class="footer-sep" aria-hidden="true">·</span><a href="analysis.html">Analysis</a><span class="footer-sep" aria-hidden="true">·</span><a href="ethics.html">Ethics</a><span class="footer-sep" aria-hidden="true">·</span><a href="bibliography.html">Bibliography</a>
+        <a href="index.html">Introduction</a><span class="footer-sep" aria-hidden="true">·</span><a
+          href="about.html">About</a><span class="footer-sep" aria-hidden="true">·</span><a
+          href="methods.html">Methods</a><span class="footer-sep" aria-hidden="true">·</span><a
+          href="data-critique.html">Data Critique</a><span class="footer-sep" aria-hidden="true">·</span><a
+          href="analysis.html">Analysis</a><span class="footer-sep" aria-hidden="true">·</span><a
+          href="ethics.html">Ethics</a><span class="footer-sep" aria-hidden="true">·</span><a
+          href="bibliography.html">Bibliography</a>
       </nav>
     </div>
   </footer>
 </body>
+
 </html>
