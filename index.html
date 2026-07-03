@@ -87,39 +87,151 @@
     </div>
 
     <figure class="figure float-wide diagram" aria-labelledby="doors-cap">
-      <svg viewBox="0 0 720 220" role="img" aria-labelledby="doors-title doors-desc" width="100%">
-        <title id="doors-title">Two admission pathways into UC Berkeley</title>
-        <desc id="doors-desc">A diagram showing two doors. One is a freshman pathway from high school and the
-          other is a transfer pathway from community college. Both lead to the same Berkeley degree, but along
-          different timelines.</desc>
-        <!-- freshman path -->
-        <rect x="20" y="40" width="170" height="60" rx="10" fill="#e7edf8" stroke="#002676"/>
-        <text x="105" y="66" text-anchor="middle" font-family="Georgia, serif" font-weight="700" fill="#002676" font-size="14">High school senior</text>
-        <text x="105" y="86" text-anchor="middle" fill="#45474f" font-size="12">Freshman applicant</text>
-        <!-- transfer path -->
-        <rect x="20" y="120" width="170" height="60" rx="10" fill="#fff4d6" stroke="#b25a00"/>
-        <text x="105" y="146" text-anchor="middle" font-family="Georgia, serif" font-weight="700" fill="#7a4d00" font-size="14">Community college</text>
-        <text x="105" y="166" text-anchor="middle" fill="#45474f" font-size="12">Transfer applicant</text>
-        <!-- arrows -->
-        <line x1="190" y1="70" x2="300" y2="95" stroke="#002676" stroke-width="3" marker-end="url(#ar)"/>
-        <line x1="190" y1="150" x2="300" y2="120" stroke="#b25a00" stroke-width="3" marker-end="url(#ar)"/>
+      <svg viewBox="0 0 900 420" role="img" aria-labelledby="doors-title doors-desc" width="100%" style="max-width:900px">
+        <title id="doors-title">Branching journey map: freshman vs. transfer pathways</title>
+        <desc id="doors-desc">A branching journey map comparing the freshman and transfer pathways at UC Berkeley. The freshman path spans four spacious years from high school to degree. The transfer path begins at community college, then compresses two years of Berkeley into a narrower space, making the structural inequality visible.</desc>
+
+        <!-- ========== STAGE COLUMN LABELS ========== -->
+        <text x="70" y="22" text-anchor="middle" fill="#45474f" font-size="11" font-family="Georgia, serif" font-style="italic">Before Berkeley</text>
+        <text x="255" y="22" text-anchor="middle" fill="#45474f" font-size="11" font-family="Georgia, serif" font-style="italic">Year 1</text>
+        <text x="415" y="22" text-anchor="middle" fill="#45474f" font-size="11" font-family="Georgia, serif" font-style="italic">Year 2</text>
+        <text x="575" y="22" text-anchor="middle" fill="#45474f" font-size="11" font-family="Georgia, serif" font-style="italic">Year 3</text>
+        <text x="725" y="22" text-anchor="middle" fill="#45474f" font-size="11" font-family="Georgia, serif" font-style="italic">Year 4</text>
+        <text x="855" y="22" text-anchor="middle" fill="#45474f" font-size="11" font-family="Georgia, serif" font-style="italic">Outcome</text>
+
+        <!-- vertical dividers -->
+        <line x1="160" y1="30" x2="160" y2="400" stroke="#ddd" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="335" y1="30" x2="335" y2="400" stroke="#ddd" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="495" y1="30" x2="495" y2="400" stroke="#ddd" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="655" y1="30" x2="655" y2="400" stroke="#ddd" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="800" y1="30" x2="800" y2="400" stroke="#ddd" stroke-width="1" stroke-dasharray="4,4"/>
+
+        <!-- ========== FRESHMAN PATH (top, blue) ========== -->
+        <text x="20" y="55" fill="#002676" font-family="Georgia, serif" font-weight="700" font-size="14">Freshman pathway</text>
+
+        <!-- High School -->
+        <rect x="20" y="65" width="130" height="70" rx="8" fill="#e7edf8" stroke="#002676" stroke-width="1.5"/>
+        <text x="85" y="88" text-anchor="middle" font-family="Georgia, serif" font-weight="700" fill="#002676" font-size="13">High School</text>
+        <text x="85" y="104" text-anchor="middle" fill="#45474f" font-size="10">Apply as senior</text>
+        <text x="85" y="118" text-anchor="middle" fill="#45474f" font-size="10">One application cycle</text>
+
+        <!-- Arrow HS → Y1 -->
+        <line x1="150" y1="100" x2="170" y2="100" stroke="#002676" stroke-width="2" marker-end="url(#arBlue)"/>
+
+        <!-- Year 1: Settle in -->
+        <rect x="175" y="65" width="155" height="70" rx="8" fill="#e7edf8" stroke="#002676" stroke-width="1.5"/>
+        <text x="252" y="85" text-anchor="middle" font-family="Georgia, serif" font-weight="700" fill="#002676" font-size="12">Settle in</text>
+        <text x="252" y="99" text-anchor="middle" fill="#45474f" font-size="10">Orientation &amp; housing</text>
+        <text x="252" y="112" text-anchor="middle" fill="#45474f" font-size="10">Gen-ed courses</text>
+        <text x="252" y="125" text-anchor="middle" fill="#45474f" font-size="10">Build social networks</text>
+
+        <!-- Arrow Y1 → Y2 -->
+        <line x1="330" y1="100" x2="340" y2="100" stroke="#002676" stroke-width="2" marker-end="url(#arBlue)"/>
+
+        <!-- Year 2: Explore -->
+        <rect x="345" y="65" width="145" height="70" rx="8" fill="#e7edf8" stroke="#002676" stroke-width="1.5"/>
+        <text x="417" y="85" text-anchor="middle" font-family="Georgia, serif" font-weight="700" fill="#002676" font-size="12">Explore</text>
+        <text x="417" y="99" text-anchor="middle" fill="#45474f" font-size="10">Switch majors freely</text>
+        <text x="417" y="112" text-anchor="middle" fill="#45474f" font-size="10">Find research &amp; clubs</text>
+        <text x="417" y="125" text-anchor="middle" fill="#45474f" font-size="10">Study abroad options</text>
+
+        <!-- Arrow Y2 → Y3 -->
+        <line x1="490" y1="100" x2="500" y2="100" stroke="#002676" stroke-width="2" marker-end="url(#arBlue)"/>
+
+        <!-- Year 3: Major work -->
+        <rect x="505" y="65" width="145" height="70" rx="8" fill="#e7edf8" stroke="#002676" stroke-width="1.5"/>
+        <text x="577" y="85" text-anchor="middle" font-family="Georgia, serif" font-weight="700" fill="#002676" font-size="12">Major work</text>
+        <text x="577" y="99" text-anchor="middle" fill="#45474f" font-size="10">Upper-div courses</text>
+        <text x="577" y="112" text-anchor="middle" fill="#45474f" font-size="10">Internships</text>
+        <text x="577" y="125" text-anchor="middle" fill="#45474f" font-size="10">Build faculty ties</text>
+
+        <!-- Arrow Y3 → Y4 -->
+        <line x1="650" y1="100" x2="660" y2="100" stroke="#002676" stroke-width="2" marker-end="url(#arBlue)"/>
+
+        <!-- Year 4: Finish -->
+        <rect x="665" y="65" width="125" height="70" rx="8" fill="#e7edf8" stroke="#002676" stroke-width="1.5"/>
+        <text x="727" y="85" text-anchor="middle" font-family="Georgia, serif" font-weight="700" fill="#002676" font-size="12">Finish</text>
+        <text x="727" y="99" text-anchor="middle" fill="#45474f" font-size="10">Thesis / capstone</text>
+        <text x="727" y="112" text-anchor="middle" fill="#45474f" font-size="10">Career prep</text>
+        <text x="727" y="125" text-anchor="middle" fill="#45474f" font-size="10">Graduate</text>
+
+        <!-- Arrow Y4 → Degree -->
+        <line x1="790" y1="100" x2="810" y2="100" stroke="#002676" stroke-width="2" marker-end="url(#arBlue)"/>
+
+        <!-- Degree (freshman) -->
+        <rect x="815" y="75" width="70" height="50" rx="25" fill="#002676"/>
+        <text x="850" y="104" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-weight="700" font-size="12">Degree</text>
+
+        <!-- ========== TRANSFER PATH (bottom, gold/brown) ========== -->
+        <text x="20" y="210" fill="#7a4d00" font-family="Georgia, serif" font-weight="700" font-size="14">Transfer pathway</text>
+
+        <!-- Community College (spans Years 1-2 width) -->
+        <rect x="20" y="220" width="470" height="80" rx="8" fill="#fff4d6" stroke="#b25a00" stroke-width="1.5"/>
+        <text x="255" y="245" text-anchor="middle" font-family="Georgia, serif" font-weight="700" fill="#7a4d00" font-size="13">Community College (2+ years)</text>
+        <text x="150" y="264" text-anchor="middle" fill="#45474f" font-size="10">Lower-div courses</text>
+        <text x="150" y="278" text-anchor="middle" fill="#45474f" font-size="10">ADT / transfer prep</text>
+        <text x="150" y="292" text-anchor="middle" fill="#45474f" font-size="10">Work to fund school</text>
+        <text x="370" y="264" text-anchor="middle" fill="#45474f" font-size="10">Navigate transfer maze</text>
+        <text x="370" y="278" text-anchor="middle" fill="#45474f" font-size="10">Apply to multiple UCs</text>
+        <text x="370" y="292" text-anchor="middle" fill="#45474f" font-size="10">Wait &amp; re-plan if denied</text>
+
+        <!-- Arrow CCC → Y3 -->
+        <line x1="490" y1="260" x2="504" y2="260" stroke="#b25a00" stroke-width="2" marker-end="url(#arGold)"/>
+
+        <!-- Year 3: Compressed start (narrower!) -->
+        <rect x="509" y="220" width="140" height="100" rx="8" fill="#fff4d6" stroke="#b25a00" stroke-width="2"/>
+        <!-- "compressed" label -->
+        <text x="579" y="240" text-anchor="middle" font-family="Georgia, serif" font-weight="700" fill="#b25a00" font-size="12">Compressed start</text>
+        <text x="579" y="256" text-anchor="middle" fill="#45474f" font-size="10">Find housing fast</text>
+        <text x="579" y="269" text-anchor="middle" fill="#45474f" font-size="10">Learn campus systems</text>
+        <text x="579" y="282" text-anchor="middle" fill="#45474f" font-size="10">Choose major quickly</text>
+        <text x="579" y="295" text-anchor="middle" fill="#45474f" font-size="10">Financial aid gaps</text>
+        <text x="579" y="308" text-anchor="middle" fill="#45474f" font-size="10">Catch prerequisites</text>
+
+        <!-- Arrow Y3 → Y4 -->
+        <line x1="649" y1="260" x2="659" y2="260" stroke="#b25a00" stroke-width="2" marker-end="url(#arGold)"/>
+
+        <!-- Year 4: Finish (narrower!) -->
+        <rect x="664" y="220" width="126" height="100" rx="8" fill="#fff4d6" stroke="#b25a00" stroke-width="2"/>
+        <text x="727" y="240" text-anchor="middle" font-family="Georgia, serif" font-weight="700" fill="#b25a00" font-size="12">Finish</text>
+        <text x="727" y="256" text-anchor="middle" fill="#45474f" font-size="10">All upper-div courses</text>
+        <text x="727" y="269" text-anchor="middle" fill="#45474f" font-size="10">Thesis / capstone</text>
+        <text x="727" y="282" text-anchor="middle" fill="#45474f" font-size="10">Internships squeezed</text>
+        <text x="727" y="295" text-anchor="middle" fill="#45474f" font-size="10">Career prep</text>
+        <text x="727" y="308" text-anchor="middle" fill="#45474f" font-size="10">Graduate</text>
+
+        <!-- Arrow Y4 → Degree -->
+        <line x1="790" y1="260" x2="810" y2="260" stroke="#b25a00" stroke-width="2" marker-end="url(#arGold)"/>
+
+        <!-- Degree (transfer) -->
+        <rect x="815" y="235" width="70" height="50" rx="25" fill="#b25a00"/>
+        <text x="850" y="264" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-weight="700" font-size="12">Degree</text>
+
+        <!-- ========== ANNOTATION: structural compression ========== -->
+        <!-- Bracket showing the compressed space -->
+        <path d="M509,340 L509,350 L790,350 L790,340" fill="none" stroke="#b25a00" stroke-width="1.5"/>
+        <line x1="649" y1="350" x2="649" y2="358" stroke="#b25a00" stroke-width="1.5"/>
+        <text x="649" y="372" text-anchor="middle" fill="#b25a00" font-size="11" font-family="Georgia, serif" font-style="italic">Same tasks, half the time</text>
+
+        <!-- Bracket showing freshman's full space -->
+        <path d="M175,145 L175,155 L790,155 L790,145" fill="none" stroke="#002676" stroke-width="1.5"/>
+        <line x1="482" y1="155" x2="482" y2="163" stroke="#002676" stroke-width="1.5"/>
+        <text x="482" y="177" text-anchor="middle" fill="#002676" font-size="11" font-family="Georgia, serif" font-style="italic">4 years at Berkeley</text>
+
+        <!-- ========== ARROW MARKERS ========== -->
         <defs>
-          <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-            <path d="M0,0 L8,3 L0,6 Z" fill="#45474f"/>
+          <marker id="arBlue" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#002676"/>
+          </marker>
+          <marker id="arGold" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#b25a00"/>
           </marker>
         </defs>
-        <!-- the door -->
-        <rect x="305" y="70" width="90" height="80" rx="8" fill="#002676"/>
-        <circle cx="384" cy="112" r="4" fill="#fdb515"/>
-        <text x="350" y="60" text-anchor="middle" fill="#002676" font-family="Georgia, serif" font-size="13" font-weight="700">Berkeley</text>
-        <!-- timelines -->
-        <line x1="400" y1="95" x2="690" y2="95" stroke="#002676" stroke-width="3"/>
-        <text x="545" y="86" text-anchor="middle" fill="#002676" font-size="12">≈ 4 years to degree (freshman clock)</text>
-        <line x1="560" y1="120" x2="690" y2="120" stroke="#b25a00" stroke-width="3"/>
-        <text x="625" y="140" text-anchor="middle" fill="#7a4d00" font-size="12">≈ 2 years (transfer clock)</text>
       </svg>
-      <figcaption id="doors-cap">Two pathways lead to one degree, but on very different timelines. Transfers
-        enter as juniors and have to fit into two years what freshmen spread across four.
+      <figcaption id="doors-cap">A branching journey map of the two pathways. Freshmen spread orientation, exploration,
+        major work, and graduation across four spacious years. Transfers spend 2+ years at community college navigating
+        the transfer process, then compress the entire Berkeley experience into two years — same tasks, half the room.
+        The structural inequality is built into the pathway, not just the student.
         <span class="src">Original illustration by Group 4.</span></figcaption>
     </figure>
 

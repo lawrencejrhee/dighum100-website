@@ -11,9 +11,9 @@ window.DH_DATA = {
   /* ---- Financial pressure by entry type ---------------------------------
      Compare key financial-aid indicators between the two pathways.       */
   financialPressure: {
-    metrics: ["Pell Grant recipients", "First-generation students"],
-    freshman: [35, 26],
-    transfer: [45, 43],
-    note: "Pell Grant: UC system-wide 2021-22, UC InfoCenter. First-generation: UC Berkeley admissions student profile."
+    metrics: ["Pell Grant recipients", "Housing insecure", "Working 20+ hrs/wk"],
+    freshman: [35, 11, 12],
+    transfer: [55, 27, 32],
+    note: "Pell Grant: UC system-wide 2021-22, UC InfoCenter. Housing insecurity: UC Basic Needs survey. Employment: UCUES survey, UC Berkeley."
   }
 };
