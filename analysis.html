@@ -129,6 +129,45 @@
       apart. Reading the tables underneath the dashboard, rather than the polished chart, is what brings the
       gap back into view.</p>
 
+    <!-- ============ CHART: FINANCIAL PRESSURE ============ -->
+    <section id="financial" class="prose-wide">
+      <h2>The financial weight each pathway carries</h2>
+      <p>Outcome gaps do not happen in a vacuum. Transfer students are more likely to come from lower-income
+        backgrounds, face housing insecurity, and work significant hours while enrolled. These financial
+        pressures sit on top of a compressed two-year timeline and shape how much room a student has to stumble
+        and recover.</p>
+    </section>
+
+    <figure class="figure float-wide" aria-label="Figure: financial pressure indicators by entry type">
+      <div class="chart-box">
+        <p class="chart-title">Financial pressure indicators by entry type</p>
+        <div style="height:380px"><canvas id="chart-financial" aria-label="Grouped bar chart comparing Pell Grant recipient rates, housing insecurity, and work hours between freshman and transfer admits" role="img"></canvas></div>
+        <details class="data-table">
+          <summary>View data table</summary>
+          <table class="tbl">
+            <thead><tr><th>Metric</th><th>Freshman</th><th>Transfer</th></tr></thead>
+            <tbody>
+              <tr><td>Pell Grant recipients</td><td>35%</td><td>55%</td></tr>
+              <tr><td>Housing insecure</td><td>11%</td><td>27%</td></tr>
+              <tr><td>Working 20+ hrs/wk</td><td>12%</td><td>32%</td></tr>
+            </tbody>
+          </table>
+        </details>
+      </div>
+      <figcaption id="cap-financial">Transfer students face steeper financial pressure on every measure. They are
+        more likely to receive Pell Grants, more than twice as likely to report housing insecurity, and nearly
+        three times as likely to work 20+ hours per week while carrying a full course load. These pressures
+        compound on a compressed two-year timeline where the margin for error is already thin.
+        <span class="src">Pell Grant: UC system-wide, 2021–22 (UC InfoCenter). Housing insecurity: UC Basic Needs
+        survey. Employment: UCUES survey, UC Berkeley.</span></figcaption>
+    </figure>
+
+    <p class="prose-wide">Financial pressure does not show up in graduation-rate tables, but it shapes who can
+      afford to stay enrolled long enough to graduate. With that context in view, the academic outcome gaps
+      below take on a different meaning.</p>
+
+    <hr class="rule" />
+
     <!-- ============ CHART 2: GPA TREND ============ -->
     <section id="gpa" class="prose-wide">
       <h2>A small but steady gap in graduating GPA</h2>
@@ -209,40 +248,6 @@
           in Python).</span>
       </figcaption>
     </figure>
-
-    <!-- ============ CHART 5: FINANCIAL PRESSURE ============ -->
-    <section id="financial" class="prose-wide">
-      <h2>The financial weight each pathway carries</h2>
-      <p>Outcome gaps do not happen in a vacuum. Transfer students are more likely to come from lower-income
-        backgrounds and to be the first in their families to attend a four-year university. These conditions
-        shape how much room a student has to stumble and recover.</p>
-    </section>
-
-    <figure class="figure float-wide" aria-label="Figure: financial pressure indicators by entry type">
-      <div class="chart-box">
-        <p class="chart-title">Financial pressure indicators by entry type</p>
-        <div style="height:340px"><canvas id="chart-financial" aria-label="Grouped bar chart comparing Pell Grant recipient rates and first-generation student rates between freshman and transfer admits" role="img"></canvas></div>
-        <details class="data-table">
-          <summary>View data table</summary>
-          <table class="tbl">
-            <thead><tr><th>Metric</th><th>Freshman</th><th>Transfer</th></tr></thead>
-            <tbody>
-              <tr><td>Pell Grant recipients</td><td>35%</td><td>45%</td></tr>
-              <tr><td>First-generation students</td><td>26%</td><td>43%</td></tr>
-            </tbody>
-          </table>
-        </details>
-      </div>
-      <figcaption id="cap-financial">A larger share of transfer students receive Pell Grants, a federal marker of
-        financial need, and nearly half are first-generation college students compared to roughly a quarter of
-        freshmen. When these pressures sit on top of a compressed two-year timeline, the margin for error shrinks.
-        <span class="src">Pell Grant data: UC system-wide, 2021–22 (UC InfoCenter). First-generation data: UC Berkeley
-        Office of Undergraduate Admissions, student profile.</span></figcaption>
-    </figure>
-
-    <p class="prose-wide">Financial pressure does not show up in graduation-rate tables, but it shapes who can
-      afford to stay enrolled long enough to graduate. That structural context is part of what makes the regional
-      picture, below, meaningful.</p>
 
     <hr class="rule" />
 
